@@ -1,0 +1,133 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(253, 248, 244, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184, 212, 227, 0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent-blue);
+  animation: float 4s ease-in-out infinite;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.nav-toggle:hover {
+  background: var(--color-bg-secondary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+.nav-link-active {
+  background: var(--color-accent-blue);
+  color: var(--color-text-primary);
+}
+
+.nav-link-active:hover {
+  background: var(--color-accent-lavender);
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(253, 248, 244, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 16px;
+    gap: 8px;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-smooth);
+    border-bottom: 1px solid rgba(184, 212, 227, 0.3);
+  }
+
+  .nav-menu-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 14px 20px;
+  }
+
+  .nav-logo span {
+    font-size: 1.25rem;
+  }
+}
